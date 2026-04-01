@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <div id="header-left">
+        <h1>Claude Usage</h1>
+        <span class="subtitle">Track session and weekly limits</span>
+      </div>
+      <div id="header-right">
+        <span id="last-updated"></span>
+        <button id="refresh-btn" title="Refresh now">↻</button>
+      </div>
+    </header>
+
+    <div id="status-summary">
+      <div class="status-item" data-for="five_hour">
+        <span class="status-dot"></span>
+        <span class="status-label">Session</span>
+        <span class="status-text">—</span>
+      </div>
+      <div class="status-item" data-for="seven_day">
+        <span class="status-dot"></span>
+        <span class="status-label">Weekly</span>
+        <span class="status-text">—</span>
+      </div>
+      <div class="status-item" data-for="seven_day_sonnet">
+        <span class="status-dot"></span>
+        <span class="status-label">Sonnet</span>
+        <span class="status-text">—</span>
+      </div>
+    </div>
+
+    <div id="error-banner" class="hidden">
+      <span id="error-text"></span>
+    </div>
+
+    <div id="metrics">
+      <div class="metric" id="metric-session">
+        <div class="metric-header">
+          <div class="metric-title">
+            <span class="metric-name">Session</span>
+            <span class="metric-period">5h</span>
+          </div>
+          <span class="metric-value">—</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="metric-footer">
+          <span class="metric-reset">—</span>
+          <span class="metric-hint" title="Resets every 5 hours from your first message of the window">ⓘ</span>
+        </div>
+        <span id="window-anchor" class="metric-window"></span>
+      </div>
+
+      <div class="metric" id="metric-weekly">
+        <div class="metric-header">
+          <div class="metric-title">
+            <span class="metric-name">Weekly</span>
+            <span class="metric-period">all models</span>
+          </div>
+          <span class="metric-value">—</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="metric-footer">
+          <span class="metric-reset">—</span>
+          <span class="metric-hint" title="Combined usage across all models, 7-day rolling window">ⓘ</span>
+        </div>
+      </div>
+
+      <div class="metric" id="metric-sonnet">
+        <div class="metric-header">
+          <div class="metric-title">
+            <span class="metric-name">Sonnet</span>
+            <span class="metric-period">7d</span>
+          </div>
+          <span class="metric-value">—</span>
+        </div>
+        <div class="progress-track">
+          <div class="progress-bar"></div>
+        </div>
+        <div class="metric-footer">
+          <span class="metric-reset">—</span>
+          <span class="metric-hint" title="Sonnet model tracked separately, 7-day rolling window">ⓘ</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="badge-selector">
+      <span class="selector-label">Badge shows</span>
+      <span class="selector-subtitle">Displayed on the extension icon</span>
+      <div class="segmented-control">
+        <button class="segment" data-metric="five_hour">Session</button>
+        <button class="segment selected" data-metric="seven_day">Weekly</button>
+        <button class="segment" data-metric="seven_day_sonnet">Sonnet</button>
+      </div>
+    </div>
+
+    <footer>
+      <a href="https://claude.ai/settings/usage" target="_blank" rel="noopener">
+        Open in Claude <span class="arrow">→</span>
+      </a>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
