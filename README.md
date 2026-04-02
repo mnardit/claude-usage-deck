@@ -2,14 +2,20 @@
 
 Chrome extension that shows your Claude.ai usage limits at a glance — no more navigating to Settings every time.
 
+**[Website](https://max.nardit.com/claude-usage-deck)** · **[Privacy Policy](https://max.nardit.com/claude-usage-deck/privacy)**
+
 ## Features
 
-- **Badge icon** with two rings: usage % (color-coded) and time remaining (blue)
-- **Popup** with all three metrics: Session (5h), Weekly All Models, Weekly Sonnet
-- **Progress bars** and countdown timers for each metric
-- **Badge metric selector** — choose which metric the badge displays (Session / Weekly / Sonnet)
-- **Manual refresh** button
-- **Window Anchor Insight** — see exactly when your 5h session window started and when it resets
+- **Adaptive badge icon** — solid color at small sizes, ring + percentage at large sizes
+- **Countdown badge** — time until reset ("2h", "45m") rendered natively by Chrome
+- **Status summary** — instant Safe / Moderate / High indicators for quick decision support
+- **Three metrics** — Session (5h), Weekly All Models (7d), Weekly Sonnet (7d)
+- **Progress bars** with color-coded status: green (0–49%), amber (50–79%), red (80–100%)
+- **Window Anchor Insight** — see when your 5h session window started and when it resets
+- **Badge metric selector** — choose which metric the icon displays
+- **Light & dark theme** — follows browser/OS preference automatically
+- **Manual refresh** + auto-polling every 5 minutes
+- **Zero tracking** — no analytics, no accounts, all data stays local
 
 ## Window Anchor Insight
 
@@ -30,13 +36,9 @@ The extension shows this window in the Session metric: `Window: 6:00 AM–11:00 
 
 The extension polls `claude.ai/api/organizations/{org_id}/usage` every 5 minutes using your browser cookies. All data stays local — nothing is sent anywhere.
 
-## Color Thresholds
+## Privacy
 
-| Usage | Color |
-|-------|-------|
-| 0–50% | Green |
-| 51–80% | Yellow |
-| 81–100% | Red |
+No analytics, no tracking, no external servers. Read the full [privacy policy](https://max.nardit.com/claude-usage-deck/privacy).
 
 ## License
 
