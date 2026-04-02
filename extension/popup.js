@@ -6,18 +6,16 @@ const METRICS = [
   { id: 'metric-sonnet', key: 'seven_day_sonnet' },
 ];
 
-const COLORS = {
-  safe:    '#22C55E',
-  warning: '#F59E0B',
-  danger:  '#EF4444',
-  muted:   '#71717A',
-};
+// Read status colors from CSS variables so they adapt to light/dark theme
+function cssVar(name) {
+  return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
 
 function getColor(utilization) {
-  if (utilization == null) return COLORS.muted;
-  if (utilization < 50) return COLORS.safe;
-  if (utilization < 80) return COLORS.warning;
-  return COLORS.danger;
+  if (utilization == null) return cssVar('--muted');
+  if (utilization < 50) return cssVar('--safe');
+  if (utilization < 80) return cssVar('--warning');
+  return cssVar('--danger');
 }
 
 function getStatusText(utilization) {
