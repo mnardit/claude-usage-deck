@@ -4,6 +4,11 @@ Chrome extension that shows your Claude.ai usage limits at a glance — no more 
 
 **[Website](https://max.nardit.com/claude-usage-deck)** · **[Privacy Policy](https://max.nardit.com/claude-usage-deck/privacy)**
 
+<p>
+  <img src="docs/images/screenshot-dark.png" alt="Claude Usage Deck — dark theme" width="49%">
+  <img src="docs/images/screenshot-light.png" alt="Claude Usage Deck — light theme" width="49%">
+</p>
+
 ## Features
 
 - **Adaptive badge icon** — solid color at small sizes, ring + percentage at large sizes
